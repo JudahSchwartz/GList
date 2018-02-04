@@ -1,0 +1,79 @@
+﻿<%@ Master Language="C#"  AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Random Meal Generator</title>
+    <link rel="shortcut icon" href="Pictures/favicon.ico" type="image/x-icon" />
+    <link rel ="stylesheet" type ="text/css" href ="masterstyles.css" />
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 581px;
+        }
+    </style>
+    </head>
+<body>
+    <form id="form1" runat="server">
+    
+   
+        
+    <div class ="topRight">
+        <br />
+       
+        </div>
+   
+    <asp:Image ID="logo" runat="server"   href="default.aspx" ImageUrl="~/Pictures/logo2.png"/>
+    <br />
+  
+        <br />
+        <div style="margin:auto; display:table" class="auto-style1">
+        <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" BorderStyle="None" Font-Italic="False" Font-Overline="False" Font-Strikeout="False" Font-Underline="True" ForeColor="#990099" ItemWrap="True">
+            <DynamicHoverStyle ForeColor="Lime" />
+            <Items>
+                <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home" Value="Home"></asp:MenuItem>
+                <asp:MenuItem NavigateUrl="~/addRecipe.aspx" Text="Add A Recipe" Value="Add A Recipe"></asp:MenuItem>
+                <asp:MenuItem NavigateUrl="~/todaysRecipe.aspx" Text="Today's Recipe" Value="Today's Recipe"></asp:MenuItem>
+                <asp:MenuItem NavigateUrl="~/MealPlanner.aspx" Text="Meal Planner" Value="Meal Planner"></asp:MenuItem>
+                <asp:MenuItem NavigateUrl="~/SearchForRecipe.aspx" Text="Search For A Recipe" Value="Search For A Recipe"></asp:MenuItem>
+            </Items>
+            <StaticHoverStyle ForeColor="White" />
+            <StaticMenuItemStyle HorizontalPadding="10px" ItemSpacing="5em" />
+            <StaticItemTemplate>
+                <%# Eval("Text") %>
+            </StaticItemTemplate>
+        </asp:Menu>
+        </div>
+    
+   
+        
+<hr />
+    <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+      <hr />
+    &copy; 2018 - Judah Schwartz <br />
+    <a = href ="contact.aspx" > Contact us</a>
+        <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/AboutUs.aspx">About The Developer</asp:HyperLink>
+        <br />
+    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/AdminPages/ReviewRecipe.aspx">Admin Area</asp:HyperLink>
+
+    </form>
+      
+</body>
+</html>
